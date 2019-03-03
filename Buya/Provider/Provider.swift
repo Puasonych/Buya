@@ -16,21 +16,37 @@ public protocol ProviderProtocol: class {
 }
 
 public class Provider<Endpoint: EndpointType>: ProviderProtocol {
+    private let networkWorker: NetworkWorkerProtocol
+    private let jsonEncoder: JSONEncoder
+    private let plugins: [PluginType]
+    
     let addressManager: AddressManagerProtocol
-    let networkWorker: NetworkWorkerProtocol
-    let jsonEncoder: JSONEncoder
     
     init(addressManager: AddressManagerProtocol,
+         plugins: [PluginType] = [],
          networkWorker: NetworkWorkerProtocol = NetworkWorker(),
          jsonEncoder: JSONEncoder = JSONEncoder()) {
         self.addressManager = addressManager
+        self.plugins = plugins
         self.networkWorker = networkWorker
         self.jsonEncoder = jsonEncoder
     }
     
     public func request(_ endpoint: Endpoint) -> Single<Data> {
         return self.createURLRequest(endpoint).flatMap { (urlRequest) -> Single<Data> in
-            return self.networkWorker.performRequest(urlRequest)
+            var urlRequest = urlRequest
+            
+            for plugin in self.plugins {
+                urlRequest = plugin.prepare(urlRequest, endpoint: endpoint)
+            }
+            
+            var result = self.networkWorker.performRequest(urlRequest)
+            
+            for plugin in self.plugins {
+                result = plugin.process(result, endpoint: endpoint)
+            }
+            
+            return result
         }
     }
 }
