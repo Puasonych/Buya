@@ -14,10 +14,10 @@ public protocol PluginType {
     func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest
     
     /// Called to modify a result before completion.
-    func process(_ result: Single<Data>, endpoint: EndpointType) -> Single<Data>
+    func process(_ request: URLRequest, _ result: Single<Data>, endpoint: EndpointType, networkWorker: NetworkWorkerProtocol) -> Single<Data>
 }
 
 public extension PluginType {
     func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest { return request }
-    func process(_ result: Single<Data>, endpoint: EndpointType) -> Single<Data> { return result }
+    func process(_ request: URLRequest, _ result: Single<Data>, endpoint: EndpointType, networkWorker: NetworkWorkerProtocol) -> Single<Data> { return result }
 }

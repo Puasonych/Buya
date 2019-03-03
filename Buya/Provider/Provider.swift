@@ -37,6 +37,10 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
     }
     
     public func request(_ endpoint: Endpoint) -> Single<Data> {
+        if endpoint.requestType == RequestType.get, case RequestInfo.body(_) = endpoint.requestInfo {
+            return Single.error(RequestBuilderError.invalidGetRequest)
+        }
+        
         return self.createURLRequest(endpoint).flatMap { (urlRequest) -> Single<Data> in
             var urlRequest = urlRequest
             
@@ -47,7 +51,7 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
             var result = self.networkWorker.performRequest(urlRequest)
             
             for plugin in self.plugins {
-                result = plugin.process(result, endpoint: endpoint)
+                result = plugin.process(urlRequest, result, endpoint: endpoint, networkWorker: self.networkWorker)
             }
             
             return result

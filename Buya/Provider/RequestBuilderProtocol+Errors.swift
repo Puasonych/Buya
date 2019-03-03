@@ -10,13 +10,16 @@ import Foundation
 
 enum RequestBuilderError: Error, LocalizedError {
     case invalidUrl
+    case invalidGetRequest
     case invalidParameters
     
     var errorDescription: String? {
         switch self {
-        case .invalidUrl:
+        case RequestBuilderError.invalidUrl:
             return "Неверный URL (RequestBuilderError)"
-        case .invalidParameters:
+        case RequestBuilderError.invalidGetRequest:
+            return "Нельзя через GET запрос передать Body"
+        case RequestBuilderError.invalidParameters:
             return "Переданы неверные Query параметры запроса (RequestBuilderError)"
         }
     }
