@@ -10,6 +10,15 @@
 		6F708F44222A91B0008C7EDB /* Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F708F3A222A91B0008C7EDB /* Buya.framework */; };
 		6F708F49222A91B0008C7EDB /* BuyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F48222A91B0008C7EDB /* BuyaTests.swift */; };
 		6F708F4B222A91B0008C7EDB /* Buya.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F708F3D222A91B0008C7EDB /* Buya.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F708F55222A9B39008C7EDB /* AddressManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F54222A9B39008C7EDB /* AddressManagerProtocol.swift */; };
+		6F708F57222A9B62008C7EDB /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F56222A9B62008C7EDB /* EndpointType.swift */; };
+		6F708F59222A9C5C008C7EDB /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F58222A9C5C008C7EDB /* RequestType.swift */; };
+		6F708F5B222AA061008C7EDB /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5A222AA061008C7EDB /* Provider.swift */; };
+		6F708F5F222AA6CA008C7EDB /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5D222AA6CA008C7EDB /* NetworkWorker.swift */; };
+		6F708F60222AA6CA008C7EDB /* NetworkWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5E222AA6CA008C7EDB /* NetworkWorkerProtocol.swift */; };
+		6F708F62222ABBFF008C7EDB /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F61222ABBFF008C7EDB /* RequestInfo.swift */; };
+		6F708F64222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */; };
+		6F708F66222AFFCB008C7EDB /* Provider+RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */; };
 		CABBFB9801C62092BCBBE2EB /* Pods_BuyaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7F7184DD73E85118A96FCA /* Pods_BuyaTests.framework */; };
 		F566C03D45CCAD0C8DB913A6 /* Pods_Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3AEAFC0EF51FDCAD324AF7 /* Pods_Buya.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +42,15 @@
 		6F708F43222A91B0008C7EDB /* BuyaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F708F48222A91B0008C7EDB /* BuyaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyaTests.swift; sourceTree = "<group>"; };
 		6F708F4A222A91B0008C7EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F708F54222A9B39008C7EDB /* AddressManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManagerProtocol.swift; sourceTree = "<group>"; };
+		6F708F56222A9B62008C7EDB /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		6F708F58222A9C5C008C7EDB /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		6F708F5A222AA061008C7EDB /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		6F708F5D222AA6CA008C7EDB /* NetworkWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		6F708F5E222AA6CA008C7EDB /* NetworkWorkerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorkerProtocol.swift; sourceTree = "<group>"; };
+		6F708F61222ABBFF008C7EDB /* RequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
+		6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestBuilderProtocol+Errors.swift"; sourceTree = "<group>"; };
+		6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+RequestBuilder.swift"; sourceTree = "<group>"; };
 		AF3AEAFC0EF51FDCAD324AF7 /* Pods_Buya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.release.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E56961C082F4456FA4989921 /* Pods-Buya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buya.release.xcconfig"; path = "Target Support Files/Pods-Buya/Pods-Buya.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,7 +86,6 @@
 				E7B85F372C5C634E9142EEFA /* Pods-BuyaTests.debug.xcconfig */,
 				D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,6 +112,12 @@
 		6F708F3C222A91B0008C7EDB /* Buya */ = {
 			isa = PBXGroup;
 			children = (
+				6F708F5C222AA6CA008C7EDB /* Network Layer */,
+				6F708F67222BC9C1008C7EDB /* Provider */,
+				6F708F58222A9C5C008C7EDB /* RequestType.swift */,
+				6F708F61222ABBFF008C7EDB /* RequestInfo.swift */,
+				6F708F54222A9B39008C7EDB /* AddressManagerProtocol.swift */,
+				6F708F56222A9B62008C7EDB /* EndpointType.swift */,
 				6F708F3D222A91B0008C7EDB /* Buya.h */,
 				6F708F3E222A91B0008C7EDB /* Info.plist */,
 			);
@@ -108,6 +131,25 @@
 				6F708F4A222A91B0008C7EDB /* Info.plist */,
 			);
 			path = BuyaTests;
+			sourceTree = "<group>";
+		};
+		6F708F5C222AA6CA008C7EDB /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				6F708F5E222AA6CA008C7EDB /* NetworkWorkerProtocol.swift */,
+				6F708F5D222AA6CA008C7EDB /* NetworkWorker.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		6F708F67222BC9C1008C7EDB /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				6F708F5A222AA061008C7EDB /* Provider.swift */,
+				6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */,
+				6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		9A1FE5292E78CEB44D5E6F5F /* Frameworks */ = {
@@ -183,6 +225,7 @@
 				TargetAttributes = {
 					6F708F39222A91B0008C7EDB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					6F708F42222A91B0008C7EDB = {
 						CreatedOnToolsVersion = 10.1;
@@ -276,6 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F708F5B222AA061008C7EDB /* Provider.swift in Sources */,
+				6F708F57222A9B62008C7EDB /* EndpointType.swift in Sources */,
+				6F708F62222ABBFF008C7EDB /* RequestInfo.swift in Sources */,
+				6F708F64222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift in Sources */,
+				6F708F55222A9B39008C7EDB /* AddressManagerProtocol.swift in Sources */,
+				6F708F66222AFFCB008C7EDB /* Provider+RequestBuilder.swift in Sources */,
+				6F708F5F222AA6CA008C7EDB /* NetworkWorker.swift in Sources */,
+				6F708F60222AA6CA008C7EDB /* NetworkWorkerProtocol.swift in Sources */,
+				6F708F59222A9C5C008C7EDB /* RequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14CD2B0D4EAF2FE2E7A102EA /* Pods-Buya.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -440,6 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.three-man-army.Buya";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E56961C082F4456FA4989921 /* Pods-Buya.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -474,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7B85F372C5C634E9142EEFA /* Pods-BuyaTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BuyaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BuyaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

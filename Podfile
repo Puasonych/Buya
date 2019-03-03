@@ -7,6 +7,7 @@ target 'Buya' do
 
   # Pods for Buya
   pod 'RxSwift', '~> 4.4'
+  pod 'RxCocoa', '~> 4.4'
 
   target 'BuyaTests' do
     inherit! :search_paths
