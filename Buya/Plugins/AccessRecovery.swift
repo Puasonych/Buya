@@ -50,7 +50,7 @@ public struct AccessRecoveryPlugin: PluginType {
      - target: The target of the request.
      - returns: The result of the main request or error.
      */
-    public func process(_ request: URLRequest, _ result: Single<Data>, endpoint: EndpointType, networkWorker: NetworkWorkerProtocol) -> Single<Data> {
+    public func process<Endpoint>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>) -> Single<Data> where Endpoint : EndpointType {
         guard let recovery = endpoint as? AccessRecovery else { return result }
         
         if !recovery.accessRecovery { return result }
@@ -71,7 +71,7 @@ public struct AccessRecoveryPlugin: PluginType {
                             return Single.error(error)
                         })
                         .flatMap({ (_) -> Single<Data> in
-                            return networkWorker.performRequest(request)
+                            return provider.request(endpoint)
                         })
                 }
                 return result

@@ -51,7 +51,7 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
             var result = self.networkWorker.performRequest(urlRequest)
             
             for plugin in self.plugins {
-                result = plugin.process(urlRequest, result, endpoint: endpoint, networkWorker: self.networkWorker)
+                result = plugin.process(result, endpoint: endpoint, provider: self)
             }
             
             return result
