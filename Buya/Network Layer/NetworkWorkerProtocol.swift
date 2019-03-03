@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol NetworkWorkerProtocol: class {
+public protocol NetworkWorkerProtocol: class {
     func performRequest(_ request: URLRequest) -> Single<Data>
 }

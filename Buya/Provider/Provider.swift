@@ -22,13 +22,17 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
     
     let addressManager: AddressManagerProtocol
     
-    init(addressManager: AddressManagerProtocol,
+    public init(addressManager: AddressManagerProtocol,
          plugins: [PluginType] = [],
-         networkWorker: NetworkWorkerProtocol = NetworkWorker(),
+         networkWorker: NetworkWorkerProtocol?,
          jsonEncoder: JSONEncoder = JSONEncoder()) {
         self.addressManager = addressManager
         self.plugins = plugins
-        self.networkWorker = networkWorker
+        if let worker = networkWorker {
+            self.networkWorker = worker
+        } else {
+            self.networkWorker = NetworkWorker()
+        }
         self.jsonEncoder = jsonEncoder
     }
     
