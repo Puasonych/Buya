@@ -50,7 +50,7 @@ public struct AccessRecoveryPlugin: PluginType {
      - target: The target of the request.
      - returns: The result of the main request or error.
      */
-    public func process<Endpoint>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>) -> Single<Data> where Endpoint : EndpointType {
+    public func process<Endpoint>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>, index: Int) -> Single<Data> where Endpoint : EndpointType {
         guard let recovery = endpoint as? AccessRecovery else { return result }
         
         if !recovery.accessRecovery { return result }
@@ -62,7 +62,7 @@ public struct AccessRecoveryPlugin: PluginType {
                     return self.accessRecoveryClosure()
                         .retryWhen({ (error) -> Observable<Void> in
                             return error.enumerated().flatMap({ (index, error) -> Observable<Void> in
-                                if error.isUnauthorized, index <= retriesNumber { return Observable.error(error) }
+                                if error.isBadRequest, index < retriesNumber { return Observable.error(error) }
                                 return Observable.just(())
                             })
                         })
@@ -71,7 +71,7 @@ public struct AccessRecoveryPlugin: PluginType {
                             return Single.error(error)
                         })
                         .flatMap({ (_) -> Single<Data> in
-                            return provider.request(endpoint)
+                            return provider.request(endpoint, reuseNumber: index + 1)
                         })
                 }
                 return result

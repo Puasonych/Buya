@@ -9,6 +9,8 @@
 import Foundation
 
 public protocol EndpointType {
+    var reuseNumber: Int { get }
+    
     var path: String { get }
     
     var requestType: RequestType { get }
@@ -21,5 +23,7 @@ public protocol EndpointType {
 }
 
 public extension EndpointType {
+    var reuseNumber: Int { return 1 }
+    
     var timeout: TimeInterval? { return nil }
 }

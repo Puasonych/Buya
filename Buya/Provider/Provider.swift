@@ -12,7 +12,7 @@ import RxSwift
 public protocol ProviderProtocol: class {
     associatedtype Endpoint: EndpointType
     
-    func request(_ endpoint: Endpoint) -> Single<Data>
+    func request(_ endpoint: Endpoint, reuseNumber: Int) -> Single<Data>
 }
 
 public class Provider<Endpoint: EndpointType>: ProviderProtocol {
@@ -36,7 +36,11 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
         self.jsonEncoder = jsonEncoder
     }
     
-    public func request(_ endpoint: Endpoint) -> Single<Data> {
+    public func request(_ endpoint: Endpoint, reuseNumber: Int = 0) -> Single<Data> {
+        if reuseNumber > endpoint.reuseNumber {
+            return Single.error(ProviderError.invalidReuseEndpoint(endpoint))
+        }
+        
         if endpoint.requestType == RequestType.get, case RequestInfo.body(_) = endpoint.requestInfo {
             return Single.error(RequestBuilderError.invalidGetRequest)
         }
@@ -51,7 +55,7 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
             var result = self.networkWorker.performRequest(urlRequest)
             
             for plugin in self.plugins {
-                result = plugin.process(result, endpoint: endpoint, provider: self)
+                result = plugin.process(result, endpoint: endpoint, provider: self, index: reuseNumber)
             }
             
             return result

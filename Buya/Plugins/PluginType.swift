@@ -14,10 +14,10 @@ public protocol PluginType {
     func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest
     
     /// Called to modify a result before completion.
-    func process<Endpoint: EndpointType>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>) -> Single<Data>
+    func process<Endpoint: EndpointType>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>, index: Int) -> Single<Data>
 }
 
 public extension PluginType {
     func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest { return request }
-    func process<Endpoint: EndpointType>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>) -> Single<Data> { return result }
+    func process<Endpoint: EndpointType>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>, index: Int) -> Single<Data> { return result }
 }
