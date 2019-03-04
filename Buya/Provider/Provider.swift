@@ -37,6 +37,8 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
     }
     
     public func request(_ endpoint: Endpoint, reuseNumber: Int = 0) -> Single<Data> {
+        assert(endpoint.reuseNumber >= 1, "endpoint.reuseNumber не может быть меньше 1")
+        
         if reuseNumber > endpoint.reuseNumber {
             return Single.error(ProviderError.invalidReuseEndpoint(endpoint))
         }
