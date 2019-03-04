@@ -9,39 +9,25 @@
 import Foundation
 import RxSwift
 
-// MARK: - RefreshTokenApply
-
 /// A protocol for controlling the behavior of `RefreshTokenPlugin`.
 public protocol RefreshTokenApply {
     /// Add refresh token to request
     var refreshTokenApply: Bool { get }
 }
 
-// MARK: - RefreshTokenPlugin
-
 public struct RefreshTokenPlugin: PluginType {
-    
     /// A closure returning the refresh token.
     public let refreshTokenClosure: () -> String?
     
     /**
      Initialize a new `RefreshTokenPlugin`.
      
-     - parameters:
-     - refreshTokenClosure: A closure returning the refresh token to be applied in query parameter.
+     - Parameter refreshTokenClosure: A closure returning the refresh token to be applied in query parameter.
      */
     public init(refreshTokenClosure: @escaping () -> String?) {
         self.refreshTokenClosure = refreshTokenClosure
     }
     
-    /**
-     Prepare a request by adding a quary if necessary.
-     
-     - parameters:
-     - request: The request to modify.
-     - target: The target of the request.
-     - returns: The modified `URLRequest`.
-     */
     public func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest {
         guard let refresh = endpoint as? RefreshTokenApply else { return request }
         

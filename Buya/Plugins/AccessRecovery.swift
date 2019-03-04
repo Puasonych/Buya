@@ -10,8 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// MARK: - AccessRecovery
-
 /// A protocol for controlling the behavior of `AccessRecoveryPlugin`.
 public protocol AccessRecovery {
     /// Represents the recovery of access to use for requests.
@@ -25,31 +23,19 @@ extension AccessRecovery {
     var retriesNumber: UInt { return 3 }
 }
 
-// MARK: - AccessRecoveryPlugin
-
 public struct AccessRecoveryPlugin: PluginType {
-    
-    /// A closure returning the refresh token.
+    /// A closure restoring access.
     public let accessRecoveryClosure: () -> Single<Data>
     
     /**
      Initialize a new `AccessRecoveryPlugin`.
      
-     - parameters:
-     - accessRecoveryClosure: Restoring access clouser
+     - Parameter accessRecoveryClosure: Restoring access clouser
      */
     public init(accessRecoveryClosure: @escaping () -> Single<Data>) {
         self.accessRecoveryClosure = accessRecoveryClosure
     }
     
-    /**
-     Prepare a request by adding a quary if necessary.
-     
-     - parameters:
-     - result: The result before completion.
-     - target: The target of the request.
-     - returns: The result of the main request or error.
-     */
     public func process<Endpoint>(_ result: Single<Data>, endpoint: Endpoint, provider: Provider<Endpoint>, index: Int) -> Single<Data> where Endpoint : EndpointType {
         guard let recovery = endpoint as? AccessRecovery else { return result }
         
@@ -76,33 +62,5 @@ public struct AccessRecoveryPlugin: PluginType {
                 }
                 return result
             }
-    }
-}
-
-private extension Error {
-    var isUnauthorized: Bool {
-        if let error = self as? RxCocoa.RxCocoaURLError {
-            switch error {
-            case .httpRequestFailed(response: let response, data: _):
-                return response.statusCode == 401
-            default:
-                return false
-            }
-        }
-        
-        return false
-    }
-    
-    var isBadRequest: Bool {
-        if let error = self as? RxCocoa.RxCocoaURLError {
-            switch error {
-            case .httpRequestFailed(response: let response, data: _):
-                return response.statusCode == 400
-            default:
-                return false
-            }
-        }
-        
-        return false
     }
 }
