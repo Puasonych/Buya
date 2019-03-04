@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.default_subspec = 'Core'
 
   spec.subspec 'Core' do |subspec|
-    subspec.source_files = 'Buya/*.swift'
+    subspec.source_files = 'Buya/*/*.swift'
     subspec.framework = 'Foundation'
     subspec.dependency "RxSwift", "~> 4.4"
   end
