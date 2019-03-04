@@ -9,15 +9,11 @@
 import Foundation
 import RxSwift
 
-// MARK: - AccessTokenAuthorizable
-
 /// A protocol for controlling the behavior of `AccessTokenPlugin`.
 public protocol AccessTokenAuthorizable {
     /// Represents the authorization header to use for requests.
     var authorizationType: AuthorizationType { get }
 }
-
-// MARK: - AuthorizationType
 
 /// An enum representing the header to use with an `AccessTokenPlugin`
 public enum AuthorizationType {
@@ -43,17 +39,14 @@ public enum AuthorizationType {
     }
 }
 
-// MARK: - AccessTokenPlugin
-
 /**
- A plugin for adding basic or bearer-type authorization headers to requests. Example:
+ A plugin for adding basic or bearer-type authorization headers to requests.
  
  ```
  Authorization: Basic <token>
  Authorization: Bearer <token>
  Authorization: <Сustom> <token>
  ```
- 
  */
 public struct AccessTokenPlugin: PluginType {
     /// A closure returning the access token to be applied in the header.
@@ -62,21 +55,12 @@ public struct AccessTokenPlugin: PluginType {
     /**
      Initialize a new `AccessTokenPlugin`.
      
-     - parameters:
-     - tokenClosure: A closure returning the token to be applied in the pattern `Authorization: <AuthorizationType> <token>`
+     - Parameter tokenClosure: A closure returning the token to be applied in the pattern `Authorization: <AuthorizationType> <token>`
      */
     public init(tokenClosure: @escaping () -> String?) {
         self.tokenClosure = tokenClosure
     }
     
-    /**
-     Prepare a request by adding an authorization header if necessary.
-     
-     - parameters:
-     - request: The request to modify.
-     - target: The target of the request.
-     - returns: The modified `URLRequest`.
-     */
     public func prepare(_ request: URLRequest, endpoint: EndpointType) -> URLRequest {
         guard let authorizable = endpoint as? AccessTokenAuthorizable else { return request }
         

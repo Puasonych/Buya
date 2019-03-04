@@ -23,9 +23,9 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
     let addressManager: AddressManagerProtocol
     
     public init(addressManager: AddressManagerProtocol,
-         plugins: [PluginType] = [],
-         networkWorker: NetworkWorkerProtocol?,
-         jsonEncoder: JSONEncoder = JSONEncoder()) {
+                plugins: [PluginType] = [],
+                networkWorker: NetworkWorkerProtocol?,
+                jsonEncoder: JSONEncoder = JSONEncoder()) {
         self.addressManager = addressManager
         self.plugins = plugins
         if let worker = networkWorker {
