@@ -20,10 +20,14 @@ public protocol EndpointType {
     var timeout: TimeInterval? { get }
     
     var headers: [String: String]? { get }
+    
+    var writingOptions: JSONSerialization.WritingOptions { get }
 }
 
 public extension EndpointType {
     var reuseNumber: Int { return 1 }
     
     var timeout: TimeInterval? { return nil }
+    
+    var writingOptions: JSONSerialization.WritingOptions { return [] }
 }

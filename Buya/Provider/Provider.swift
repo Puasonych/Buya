@@ -20,11 +20,11 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
     private let jsonEncoder: JSONEncoder
     private let plugins: [PluginType]
     
-    let addressManager: AddressManagerProtocol
+    public let addressManager: AddressManagerProtocol
     
     public init(addressManager: AddressManagerProtocol,
                 plugins: [PluginType] = [],
-                networkWorker: NetworkWorkerProtocol?,
+                networkWorker: NetworkWorkerProtocol? = nil,
                 jsonEncoder: JSONEncoder = JSONEncoder()) {
         self.addressManager = addressManager
         self.plugins = plugins
