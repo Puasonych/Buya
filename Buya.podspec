@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license            = { :type => 'MIT' }
   spec.authors            = { 'Erik Basargin' => 'basargin.erik@gmail.com', 'Kirill Saltykov' => 'kirill.salti@gmail.com' }
   spec.social_media_url   = 'https://twitter.com/Puasonych'
-  spec.source             = { :git => 'https://github.com/Puasonych/Buya.git', :tag => "0.0.1" }
+  spec.source             = { :git => 'https://github.com/Puasonych/Buya.git', :tag => '0.0.1' }
   spec.swift_version      = '4.2'
 
   spec.ios.deployment_target  = '8.0'
@@ -16,6 +16,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Core' do |subspec|
     subspec.source_files = 'Buya/**/*.swift'
     subspec.framework = 'Foundation'
-    subspec.dependency "RxSwift", "~> 4.4"
+    subspec.dependency 'RxSwift', '~> 4.4'
+    subspec.dependency 'RxCocoa', '~> 4.4'
   end
 end
