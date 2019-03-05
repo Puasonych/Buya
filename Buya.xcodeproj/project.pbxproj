@@ -109,17 +109,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		6F40A38E222E529500952D84 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				6F708F58222A9C5C008C7EDB /* RequestType.swift */,
-				6F708F61222ABBFF008C7EDB /* RequestInfo.swift */,
-				6F708F54222A9B39008C7EDB /* AddressManagerProtocol.swift */,
-				6F708F56222A9B62008C7EDB /* EndpointType.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		6F708F30222A91B0008C7EDB = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +132,6 @@
 		6F708F3C222A91B0008C7EDB /* Buya */ = {
 			isa = PBXGroup;
 			children = (
-				6F40A38E222E529500952D84 /* Common */,
 				6F40A388222D9FD000952D84 /* Extensions */,
 				6F708F68222BDC39008C7EDB /* Plugins */,
 				6F708F5C222AA6CA008C7EDB /* Network Layer */,
@@ -175,6 +163,10 @@
 		6F708F67222BC9C1008C7EDB /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				6F708F58222A9C5C008C7EDB /* RequestType.swift */,
+				6F708F61222ABBFF008C7EDB /* RequestInfo.swift */,
+				6F708F54222A9B39008C7EDB /* AddressManagerProtocol.swift */,
+				6F708F56222A9B62008C7EDB /* EndpointType.swift */,
 				6F708F5A222AA061008C7EDB /* Provider.swift */,
 				6F40A382222C6EEA00952D84 /* Provider+Errors.swift */,
 				6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */,
