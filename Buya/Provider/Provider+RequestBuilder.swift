@@ -33,7 +33,6 @@ extension Provider: RequestBuilderProtocol {
             } else {
                 request = URLRequest(url: url)
             }
-            break
             
         case RequestInfo.query(let parameters):
             guard let url = self.makeUrlWithQuery(components: components, from: parameters) else { return Single.error(RequestBuilderError.invalidParameters) }
@@ -43,9 +42,38 @@ extension Provider: RequestBuilderProtocol {
             } else {
                 request = URLRequest(url: url)
             }
-            break
             
-        case RequestInfo.body(let data):
+        case RequestInfo.body(let parameters):
+            if let timeout = endpoint.timeout {
+                request = URLRequest(url: url, timeoutInterval: timeout)
+            } else {
+                request = URLRequest(url: url)
+            }
+            
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: endpoint.writingOptions)
+                request.httpBody = data
+            } catch {
+                return Single.error(RequestBuilderError.jsonEncodingFailed(error: error))
+            }
+            
+        case RequestInfo.common(let urlParameters, let bodyParameters):
+            guard let url = self.makeUrlWithQuery(components: components, from: urlParameters) else { return Single.error(RequestBuilderError.invalidParameters) }
+            
+            if let timeout = endpoint.timeout {
+                request = URLRequest(url: url, timeoutInterval: timeout)
+            } else {
+                request = URLRequest(url: url)
+            }
+            
+            do {
+                let data = try JSONSerialization.data(withJSONObject: bodyParameters, options: endpoint.writingOptions)
+                request.httpBody = data
+            } catch {
+                return Single.error(RequestBuilderError.jsonEncodingFailed(error: error))
+            }
+            
+        case RequestInfo.bodyData(let data):
             if let timeout = endpoint.timeout {
                 request = URLRequest(url: url, timeoutInterval: timeout)
             } else {
@@ -55,7 +83,7 @@ extension Provider: RequestBuilderProtocol {
             request.httpBody = data
             break
             
-        case RequestInfo.common(let bodyData, let urlParameters):
+        case RequestInfo.commonData(let urlParameters, let bodyData):
             guard let url = self.makeUrlWithQuery(components: components, from: urlParameters) else { return Single.error(RequestBuilderError.invalidParameters) }
             
             if let timeout = endpoint.timeout {

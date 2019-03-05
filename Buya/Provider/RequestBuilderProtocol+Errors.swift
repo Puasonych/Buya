@@ -12,6 +12,7 @@ public enum RequestBuilderError: Error, LocalizedError {
     case invalidUrl
     case invalidGetRequest
     case invalidParameters
+    case jsonEncodingFailed(error: Error)
     
     public var errorDescription: String? {
         switch self {
@@ -21,6 +22,8 @@ public enum RequestBuilderError: Error, LocalizedError {
             return "Нельзя через GET запрос передать Body"
         case RequestBuilderError.invalidParameters:
             return "Переданы неверные Query параметры запроса (RequestBuilderError)"
+        case RequestBuilderError.jsonEncodingFailed(let error):
+            return "JSON serialization failed with an underlying system error during the encoding process. Error: \(error.localizedDescription)"
         }
     }
 }

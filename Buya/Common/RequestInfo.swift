@@ -10,7 +10,9 @@ import Foundation
 
 public enum RequestInfo {
     case none
-    case query(_ parameters: [String: String])
-    case body(_ data: Data)
-    case common(_ bodyData: Data, _ urlParameters: [String: String])
+    case query(parameters: [String: String])
+    case body(parameters: [String: Any])
+    case common(urlParameters: [String: String], bodyParameters: [String: Any])
+    case bodyData(data: Data)
+    case commonData(urlParameters: [String: String], bodyData: Data)
 }
