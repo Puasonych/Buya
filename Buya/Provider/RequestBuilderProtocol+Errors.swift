@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum RequestBuilderError: Error, LocalizedError {
+public enum RequestBuilderError: Error, LocalizedError {
     case invalidUrl
     case invalidGetRequest
     case invalidParameters
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case RequestBuilderError.invalidUrl:
             return "Неверный URL (RequestBuilderError)"

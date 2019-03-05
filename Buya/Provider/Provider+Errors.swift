@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum ProviderError: Error, LocalizedError {
+public enum ProviderError: Error, LocalizedError {
     case invalidReuseEndpoint(_ endpoint: EndpointType)
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case ProviderError.invalidReuseEndpoint(let endpoint):
             return "Запрос \(endpoint.path) повторился более \(endpoint.reuseNumber) раз(а) (ProviderError)"

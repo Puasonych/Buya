@@ -10,14 +10,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class NetworkWorker: NetworkWorkerProtocol {
+public class NetworkWorker: NetworkWorkerProtocol {
     private let session: URLSession
     
     required init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
     
-    func performRequest(_ request: URLRequest) -> Single<Data> {
+    public func performRequest(_ request: URLRequest) -> Single<Data> {
         return self.session.rx.data(request: request).asSingle()
     }
 }

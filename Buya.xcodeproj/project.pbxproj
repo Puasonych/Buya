@@ -13,6 +13,7 @@
 		6F40A394222E5A3000952D84 /* AddressManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A390222E5A2F00952D84 /* AddressManagerProtocol.swift */; };
 		6F40A395222E5A3000952D84 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A391222E5A2F00952D84 /* EndpointType.swift */; };
 		6F40A396222E5A3000952D84 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A392222E5A2F00952D84 /* RequestType.swift */; };
+		6F40A3C5222EC16600952D84 /* Single+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A3C4222EC16600952D84 /* Single+Data.swift */; };
 		6F708F44222A91B0008C7EDB /* Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F708F3A222A91B0008C7EDB /* Buya.framework */; };
 		6F708F49222A91B0008C7EDB /* BuyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F48222A91B0008C7EDB /* BuyaTests.swift */; };
 		6F708F4B222A91B0008C7EDB /* Buya.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F708F3D222A91B0008C7EDB /* Buya.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		6F40A390222E5A2F00952D84 /* AddressManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressManagerProtocol.swift; sourceTree = "<group>"; };
 		6F40A391222E5A2F00952D84 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		6F40A392222E5A2F00952D84 /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		6F40A3C4222EC16600952D84 /* Single+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Data.swift"; sourceTree = "<group>"; };
 		6F708F3A222A91B0008C7EDB /* Buya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Buya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F708F3D222A91B0008C7EDB /* Buya.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buya.h; sourceTree = "<group>"; };
 		6F708F3E222A91B0008C7EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6F40A389222D9FF900952D84 /* Error+Extensions.swift */,
+				6F40A3C4222EC16600952D84 /* Single+Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				6F40A395222E5A3000952D84 /* EndpointType.swift in Sources */,
 				6F708F6A222BDC67008C7EDB /* PluginType.swift in Sources */,
 				6F40A393222E5A3000952D84 /* RequestInfo.swift in Sources */,
+				6F40A3C5222EC16600952D84 /* Single+Data.swift in Sources */,
 				6F708F5B222AA061008C7EDB /* Provider.swift in Sources */,
 				6F708F97222BF0C5008C7EDB /* AccessTokenAuthorizable.swift in Sources */,
 				6F708F99222BF29B008C7EDB /* RefreshTokenApply.swift in Sources */,
