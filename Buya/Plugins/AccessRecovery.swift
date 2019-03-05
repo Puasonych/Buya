@@ -19,7 +19,7 @@ public protocol AccessRecovery {
     var retriesNumber: UInt { get }
 }
 
-extension AccessRecovery {
+public extension AccessRecovery {
     var retriesNumber: UInt { return 3 }
 }
 
