@@ -6,8 +6,9 @@ target 'Buya' do
   use_frameworks!
 
   # Pods for Buya
-  pod 'RxSwift', '~> 4.4'
-  pod 'RxCocoa', '~> 4.4'
+  pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
 
   target 'BuyaTests' do
     inherit! :search_paths
