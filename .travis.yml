@@ -5,7 +5,7 @@ os:
 osx_image: xcode10.1
 
 before_install:
-  - gem uninstall cocoapods -a
+  - gem uninstall cocoapods -a -x
   - gem install cocoapods --no-ri --no-rdoc
   - pod install
 
