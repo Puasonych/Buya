@@ -8,5 +8,4 @@ before_install:
   - pod install
 
 script:
-  - xcodebuild -version
-  - xcodebuild -showsdks
+  - xcodebuild -workspace Buya.xcworkspace -scheme BuyaTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=12.1' test | xcpretty

@@ -9,10 +9,13 @@ target 'Buya' do
   pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
   pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
-
+  
   target 'BuyaTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
   end
-
+  
 end
