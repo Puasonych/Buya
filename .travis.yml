@@ -1,0 +1,13 @@
+language: objective-c
+
+os:
+  - osx
+osx_image: xcode10.1
+
+before_install:
+  - gem uninstall cocoapods -a -x
+  - gem install cocoapods --no-ri --no-rdoc
+  - pod install
+
+script:
+  - xcodebuild -workspace Buya.xcworkspace -scheme BuyaTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=12.1' test | xcpretty
