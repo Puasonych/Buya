@@ -1,0 +1,14 @@
+/* 
+  RequestBuilderLocalization.strings
+  Buya
+
+  Created by Eric Basargin on 12/03/2019.
+  Copyright © 2019 Three-man army. All rights reserved.
+*/
+
+// MARK: - RequestBuilder+Errors
+"Invalid url (%s)" = "Invalid url (%s)";
+"GET request can not contain Body (%s)" = "GET request can not contain Body (%s)";
+"Invalid query parameters (%s)" = "Invalid query parameters (%s)";
+"JSON serialization failed with an underlying system error during the encoding process; Error: %s (%s)" = "JSON serialization failed with an underlying system error during the encoding process; Error: %s (%s)";
+"Invalid endpoint (%s)" = "Invalid endpoint (%s)";

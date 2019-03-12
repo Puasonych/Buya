@@ -14,7 +14,7 @@ public enum ProviderError: Error, LocalizedError {
     public var errorDescription: String? {
         switch self {
         case ProviderError.invalidReuseEndpoint(let endpoint):
-            return "Запрос \(endpoint.path) повторился более \(endpoint.reuseNumber) раз(а) (ProviderError)"
+            return "The request %s was repeated more than %d (%s)".providerLocalized(arguments: endpoint.path, endpoint.reuseNumber, "\(self)")
         }
     }
 }

@@ -18,15 +18,15 @@ public enum RequestBuilderError: Error, LocalizedError {
     public var errorDescription: String? {
         switch self {
         case RequestBuilderError.invalidUrl:
-            return "Неверный URL (RequestBuilderError)"
+            return "Invalid url (%s)".requestBuilderLocalized(arguments: "\(self)")
         case RequestBuilderError.invalidGetRequest:
-            return "Нельзя через GET запрос передать Body"
+            return "GET request can not contain Body (%s)".requestBuilderLocalized(arguments: "\(self)")
         case RequestBuilderError.invalidParameters:
-            return "Переданы неверные Query параметры запроса (RequestBuilderError)"
+            return "Invalid query parameters (%s)".requestBuilderLocalized(arguments: "\(self)")
         case RequestBuilderError.jsonEncodingFailed(let error):
-            return "JSON serialization failed with an underlying system error during the encoding process. Error: \(error.localizedDescription)"
+            return "JSON serialization failed with an underlying system error during the encoding process; Error: %s (%s)".requestBuilderLocalized(arguments: error.localizedDescription, "\(self)")
         case RequestBuilderError.invalidEndpoint:
-            return "При построении Request пошло что-то не так"
+            return "Invalid endpoint (%s)".requestBuilderLocalized(arguments: "\(self)")
         }
     }
 }
