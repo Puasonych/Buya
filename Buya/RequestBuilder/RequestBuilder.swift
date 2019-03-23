@@ -79,7 +79,7 @@ extension RequestBuilder: RequestBuilderFunctionality {
     }
     
     func requestData(_ endpoint: EndpointType) -> Single<URLRequest> {
-        guard case RequestInfo.bodyData(let data) = endpoint.requestInfo else {
+        guard case let RequestInfo.bodyData(data) = endpoint.requestInfo else {
             return Single.error(RequestBuilderError.invalidEndpoint)
         }
         
@@ -101,7 +101,7 @@ extension RequestBuilder: RequestBuilderFunctionality {
     }
     
     func requestCompositeData(_ endpoint: EndpointType) -> Single<URLRequest> {
-        guard case RequestInfo.commonData(let parameters, let data) = endpoint.requestInfo else {
+        guard case let RequestInfo.commonData(parameters, data) = endpoint.requestInfo else {
             return Single.error(RequestBuilderError.invalidEndpoint)
         }
         
@@ -131,7 +131,7 @@ extension RequestBuilder: RequestBuilderFunctionality {
     }
     
     func requestQueryParameters(_ endpoint: EndpointType) -> Single<URLRequest> {
-        guard case RequestInfo.query(let parameters) = endpoint.requestInfo else {
+        guard case let RequestInfo.query(parameters) = endpoint.requestInfo else {
             return Single.error(RequestBuilderError.invalidEndpoint)
         }
         
@@ -160,7 +160,7 @@ extension RequestBuilder: RequestBuilderFunctionality {
     }
     
     func requestDataParameters(_ endpoint: EndpointType) -> Single<URLRequest> {
-        guard case RequestInfo.body(let parameters) = endpoint.requestInfo else {
+        guard case let RequestInfo.body(parameters) = endpoint.requestInfo else {
             return Single.error(RequestBuilderError.invalidEndpoint)
         }
         
@@ -188,7 +188,7 @@ extension RequestBuilder: RequestBuilderFunctionality {
     }
     
     func requestCompositeParameters(_ endpoint: EndpointType) -> Single<URLRequest> {
-        guard case RequestInfo.common(let urlParameters, let bodyParameters) = endpoint.requestInfo else {
+        guard case let RequestInfo.common(urlParameters, bodyParameters) = endpoint.requestInfo else {
             return Single.error(RequestBuilderError.invalidEndpoint)
         }
         
