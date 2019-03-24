@@ -26,13 +26,9 @@ public class Provider<Endpoint: EndpointType>: ProviderProtocol {
         }
     }
     
-    public func request(_ endpoint: Endpoint) -> Single<Data> {
+    public func request(_ endpoint: Endpoint, index: Int = 0) -> Single<Data> {
         assert(endpoint.reuseNumber >= 1, "endpoint.reuseNumber cannot be less than 1".providerLocalized())
         
-        return request(endpoint, index: 0)
-    }
-    
-    internal func request(_ endpoint: Endpoint, index: Int = 0) -> Single<Data> {
         if index > endpoint.reuseNumber {
             return Single.error(ProviderError.invalidReuseEndpoint(endpoint))
         }

@@ -12,5 +12,5 @@ import RxSwift
 public protocol ProviderProtocol: class {
     associatedtype Endpoint: EndpointType
     
-    func request(_ endpoint: Endpoint) -> Single<Data>
+    func request(_ endpoint: Endpoint, index: Int) -> Single<Data>
 }

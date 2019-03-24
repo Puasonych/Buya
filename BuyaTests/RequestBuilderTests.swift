@@ -10,34 +10,34 @@ import XCTest
 import RxBlocking
 @testable import Buya
 
-enum TestAddressManager: String, Buya.AddressManagerProtocol {
-    case develop = "http://dev.test.ltd:8181"
-    
-    var url: URL { return URL(string: self.rawValue)! }
-}
-
-typealias TestProvider = Buya.Provider<TestAPI>
-
-enum TestAPI {
-    var testQuery: [String: String] { return ["valueOne": "Hello", "valueTwo": "123"] }
-    var testDataParameters: [String: Any] { return ["text": "Hello, World!"] }
-    var testData: Data { return try! JSONSerialization.data(withJSONObject: self.testDataParameters, options: []) }
-    
-    case testRequestPlain
-    case testRequestData
-    case testRequestCompositeData
-    case testRequestQueryParameters
-    case testRequestDataParameters
-    case testRequestCompositeParameters
-}
-
 class RequestBuilderTests: XCTestCase {
+    // MARK: - Stubs
+    private enum TestAddressManager: String, Buya.AddressManagerProtocol {
+        case develop = "http://dev.test.ltd:8181"
+        
+        var url: URL { return URL(string: self.rawValue)! }
+    }
+    
+    internal enum TestAPI {
+        var testQuery: [String: String] { return ["valueOne": "Hello", "valueTwo": "123"] }
+        var testDataParameters: [String: Any] { return ["text": "Hello, World!"] }
+        var testData: Data { return try! JSONSerialization.data(withJSONObject: self.testDataParameters, options: []) }
+        
+        case testRequestPlain
+        case testRequestData
+        case testRequestCompositeData
+        case testRequestQueryParameters
+        case testRequestDataParameters
+        case testRequestCompositeParameters
+    }
+    
+    // MARK: - Tests
     func testRequestPlain() {
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
         let endpoint = TestAPI.testRequestPlain
         
         do {
-            let urlRequest = try requestBuilder.requestPlain(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -53,7 +53,7 @@ class RequestBuilderTests: XCTestCase {
         let endpoint = TestAPI.testRequestData
         
         do {
-            let urlRequest = try requestBuilder.requestData(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -72,7 +72,7 @@ class RequestBuilderTests: XCTestCase {
             .joined(separator: "&")
         
         do {
-            let urlRequest = try requestBuilder.requestCompositeData(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -91,7 +91,7 @@ class RequestBuilderTests: XCTestCase {
             .joined(separator: "&")
         
         do {
-            let urlRequest = try requestBuilder.requestQueryParameters(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -107,7 +107,7 @@ class RequestBuilderTests: XCTestCase {
         let endpoint = TestAPI.testRequestDataParameters
         
         do {
-            let urlRequest = try requestBuilder.requestDataParameters(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -126,7 +126,7 @@ class RequestBuilderTests: XCTestCase {
             .joined(separator: "&")
         
         do {
-            let urlRequest = try requestBuilder.requestCompositeParameters(endpoint).toBlocking().single()
+            let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
@@ -138,7 +138,7 @@ class RequestBuilderTests: XCTestCase {
     }
 }
 
-extension TestAPI: Buya.EndpointType {
+extension RequestBuilderTests.TestAPI: Buya.EndpointType {
     var path: String {
         return "/api/test"
     }
