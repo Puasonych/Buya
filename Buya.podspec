@@ -3,10 +3,10 @@ Pod::Spec.new do |spec|
   spec.version            = '0.0.5'
   spec.summary            = 'Network abstraction framework'
   spec.homepage           = 'https://github.com/Puasonych/Buya'
-  spec.license            = { :type => 'MIT' }
+  spec.license            = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors            = { 'Erik Basargin' => 'basargin.erik@gmail.com', 'Kirill Saltykov' => 'kirill.salti@gmail.com' }
   spec.social_media_url   = 'https://twitter.com/Puasonych'
-  spec.source             = { :git => 'https://github.com/Puasonych/Buya.git', :tag => '0.0.5' }
+  spec.source             = { :git => 'https://github.com/Puasonych/Buya.git', :tag => spec.version }
   spec.swift_version      = '4.2'
 
   spec.ios.deployment_target  = '8.0'
