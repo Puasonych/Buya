@@ -10,6 +10,7 @@ import XCTest
 import RxCocoa
 
 class ExtensionsErrorsTests: XCTestCase {
+    // MARK: - Stubs
     func testError(statusCode: Int) -> RxCocoa.RxCocoaURLError {
         return RxCocoa.RxCocoaURLError.httpRequestFailed(
             response: HTTPURLResponse(
@@ -22,6 +23,7 @@ class ExtensionsErrorsTests: XCTestCase {
         )
     }
     
+    // MARK: - Tests
     func testBadRequest() {
         XCTAssertTrue(self.testError(statusCode: 400).isBadRequest)
         XCTAssertFalse(self.testError(statusCode: 500).isBadRequest)
