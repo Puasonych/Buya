@@ -1,0 +1,7 @@
+coverage_service: cobertura_xml
+workspace: Buya.xcworkspace
+xcodeproj: Buya.xcodeproj
+scheme: Buya
+output_directory: reports
+ignore:
+  - BuyaTests/*

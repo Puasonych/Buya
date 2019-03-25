@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322D86AC4C8D5209687D7C56 /* Pods_BuyaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3C3B85A4F371F2CDB99805 /* Pods_BuyaTests.framework */; };
+		39129351EBE600BFB45B0BA6 /* Pods_Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57ED2D2D4B12C7F2FC3433AE /* Pods_Buya.framework */; };
 		6F40A383222C6EEA00952D84 /* Provider+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A382222C6EEA00952D84 /* Provider+Errors.swift */; };
 		6F40A38A222D9FF900952D84 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A389222D9FF900952D84 /* Error+Extensions.swift */; };
 		6F40A393222E5A3000952D84 /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A38F222E5A2F00952D84 /* RequestInfo.swift */; };
@@ -14,20 +16,23 @@
 		6F40A395222E5A3000952D84 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A391222E5A2F00952D84 /* EndpointType.swift */; };
 		6F40A396222E5A3000952D84 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A392222E5A2F00952D84 /* RequestType.swift */; };
 		6F40A3C5222EC16600952D84 /* Single+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A3C4222EC16600952D84 /* Single+Data.swift */; };
+		6F40A3E322318BEE00952D84 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A3E222318BEE00952D84 /* ProviderProtocol.swift */; };
+		6F40A3E522318D2100952D84 /* RequestBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F40A3E422318D2100952D84 /* RequestBuilderProtocol.swift */; };
 		6F708F44222A91B0008C7EDB /* Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F708F3A222A91B0008C7EDB /* Buya.framework */; };
-		6F708F49222A91B0008C7EDB /* BuyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F48222A91B0008C7EDB /* BuyaTests.swift */; };
+		6F708F49222A91B0008C7EDB /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F48222A91B0008C7EDB /* RequestBuilderTests.swift */; };
 		6F708F4B222A91B0008C7EDB /* Buya.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F708F3D222A91B0008C7EDB /* Buya.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F708F5B222AA061008C7EDB /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5A222AA061008C7EDB /* Provider.swift */; };
 		6F708F5F222AA6CA008C7EDB /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5D222AA6CA008C7EDB /* NetworkWorker.swift */; };
 		6F708F60222AA6CA008C7EDB /* NetworkWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F5E222AA6CA008C7EDB /* NetworkWorkerProtocol.swift */; };
-		6F708F64222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */; };
-		6F708F66222AFFCB008C7EDB /* Provider+RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */; };
+		6F708F64222AFD39008C7EDB /* RequestBuilder+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F63222AFD39008C7EDB /* RequestBuilder+Errors.swift */; };
+		6F708F66222AFFCB008C7EDB /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F65222AFFCB008C7EDB /* RequestBuilder.swift */; };
 		6F708F6A222BDC67008C7EDB /* PluginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F69222BDC67008C7EDB /* PluginType.swift */; };
 		6F708F97222BF0C5008C7EDB /* AccessTokenAuthorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F96222BF0C5008C7EDB /* AccessTokenAuthorizable.swift */; };
 		6F708F99222BF29B008C7EDB /* RefreshTokenApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F98222BF29B008C7EDB /* RefreshTokenApply.swift */; };
 		6F708F9B222BF5CB008C7EDB /* AccessRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F708F9A222BF5CB008C7EDB /* AccessRecovery.swift */; };
-		CABBFB9801C62092BCBBE2EB /* Pods_BuyaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7F7184DD73E85118A96FCA /* Pods_BuyaTests.framework */; };
-		F566C03D45CCAD0C8DB913A6 /* Pods_Buya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3AEAFC0EF51FDCAD324AF7 /* Pods_Buya.framework */; };
+		6FECADAE223762BB00B0D272 /* ProviderLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FECADB0223762BB00B0D272 /* ProviderLocalization.strings */; };
+		6FECADB4223769CB00B0D272 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FECADB3223769CB00B0D272 /* String+Localized.swift */; };
+		6FECADB722376C5700B0D272 /* RequestBuilderLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FECADB922376C5700B0D272 /* RequestBuilderLocalization.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14CD2B0D4EAF2FE2E7A102EA /* Pods-Buya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buya.debug.xcconfig"; path = "Target Support Files/Pods-Buya/Pods-Buya.debug.xcconfig"; sourceTree = "<group>"; };
-		3A7F7184DD73E85118A96FCA /* Pods_BuyaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuyaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57ED2D2D4B12C7F2FC3433AE /* Pods_Buya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F40A382222C6EEA00952D84 /* Provider+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+Errors.swift"; sourceTree = "<group>"; };
 		6F40A389222D9FF900952D84 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		6F40A38F222E5A2F00952D84 /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
@@ -50,25 +54,33 @@
 		6F40A391222E5A2F00952D84 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
 		6F40A392222E5A2F00952D84 /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		6F40A3C4222EC16600952D84 /* Single+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Data.swift"; sourceTree = "<group>"; };
+		6F40A3E222318BEE00952D84 /* ProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		6F40A3E422318D2100952D84 /* RequestBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderProtocol.swift; sourceTree = "<group>"; };
 		6F708F3A222A91B0008C7EDB /* Buya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Buya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F708F3D222A91B0008C7EDB /* Buya.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buya.h; sourceTree = "<group>"; };
 		6F708F3E222A91B0008C7EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F708F43222A91B0008C7EDB /* BuyaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F708F48222A91B0008C7EDB /* BuyaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyaTests.swift; sourceTree = "<group>"; };
+		6F708F48222A91B0008C7EDB /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 		6F708F4A222A91B0008C7EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F708F5A222AA061008C7EDB /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		6F708F5D222AA6CA008C7EDB /* NetworkWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		6F708F5E222AA6CA008C7EDB /* NetworkWorkerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorkerProtocol.swift; sourceTree = "<group>"; };
-		6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestBuilderProtocol+Errors.swift"; sourceTree = "<group>"; };
-		6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+RequestBuilder.swift"; sourceTree = "<group>"; };
+		6F708F63222AFD39008C7EDB /* RequestBuilder+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestBuilder+Errors.swift"; sourceTree = "<group>"; };
+		6F708F65222AFFCB008C7EDB /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		6F708F69222BDC67008C7EDB /* PluginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginType.swift; sourceTree = "<group>"; };
 		6F708F96222BF0C5008C7EDB /* AccessTokenAuthorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAuthorizable.swift; sourceTree = "<group>"; };
 		6F708F98222BF29B008C7EDB /* RefreshTokenApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenApply.swift; sourceTree = "<group>"; };
 		6F708F9A222BF5CB008C7EDB /* AccessRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecovery.swift; sourceTree = "<group>"; };
-		AF3AEAFC0EF51FDCAD324AF7 /* Pods_Buya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.release.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.release.xcconfig"; sourceTree = "<group>"; };
-		E56961C082F4456FA4989921 /* Pods-Buya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buya.release.xcconfig"; path = "Target Support Files/Pods-Buya/Pods-Buya.release.xcconfig"; sourceTree = "<group>"; };
-		E7B85F372C5C634E9142EEFA /* Pods-BuyaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.debug.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FECADAF223762BB00B0D272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProviderLocalization.strings; sourceTree = "<group>"; };
+		6FECADB22237638700B0D272 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ProviderLocalization.strings; sourceTree = "<group>"; };
+		6FECADB3223769CB00B0D272 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		6FECADB822376C5700B0D272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RequestBuilderLocalization.strings; sourceTree = "<group>"; };
+		6FECADBA22376C5900B0D272 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RequestBuilderLocalization.strings; sourceTree = "<group>"; };
+		8CDD9CCCA141974D616A159F /* Pods-Buya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buya.release.xcconfig"; path = "Target Support Files/Pods-Buya/Pods-Buya.release.xcconfig"; sourceTree = "<group>"; };
+		9F3C3B85A4F371F2CDB99805 /* Pods_BuyaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuyaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7DD4F67F2BECC43D15F5683 /* Pods-BuyaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.debug.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB572C4DF6F510E979FCBD57 /* Pods-BuyaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.release.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF0B25401ABCA8331CB68F58 /* Pods-Buya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buya.debug.xcconfig"; path = "Target Support Files/Pods-Buya/Pods-Buya.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F566C03D45CCAD0C8DB913A6 /* Pods_Buya.framework in Frameworks */,
+				39129351EBE600BFB45B0BA6 /* Pods_Buya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F708F44222A91B0008C7EDB /* Buya.framework in Frameworks */,
-				CABBFB9801C62092BCBBE2EB /* Pods_BuyaTests.framework in Frameworks */,
+				322D86AC4C8D5209687D7C56 /* Pods_BuyaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,10 +107,10 @@
 		2113C4C3172867F56D9BEDD2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14CD2B0D4EAF2FE2E7A102EA /* Pods-Buya.debug.xcconfig */,
-				E56961C082F4456FA4989921 /* Pods-Buya.release.xcconfig */,
-				E7B85F372C5C634E9142EEFA /* Pods-BuyaTests.debug.xcconfig */,
-				D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */,
+				FF0B25401ABCA8331CB68F58 /* Pods-Buya.debug.xcconfig */,
+				8CDD9CCCA141974D616A159F /* Pods-Buya.release.xcconfig */,
+				B7DD4F67F2BECC43D15F5683 /* Pods-BuyaTests.debug.xcconfig */,
+				CB572C4DF6F510E979FCBD57 /* Pods-BuyaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,6 +120,7 @@
 			children = (
 				6F40A389222D9FF900952D84 /* Error+Extensions.swift */,
 				6F40A3C4222EC16600952D84 /* Single+Data.swift */,
+				6FECADB3223769CB00B0D272 /* String+Localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +136,17 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		6F40A3E122318BA600952D84 /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				6F40A3E422318D2100952D84 /* RequestBuilderProtocol.swift */,
+				6F708F63222AFD39008C7EDB /* RequestBuilder+Errors.swift */,
+				6F708F65222AFFCB008C7EDB /* RequestBuilder.swift */,
+				6FECADB922376C5700B0D272 /* RequestBuilderLocalization.strings */,
+			);
+			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
 		6F708F30222A91B0008C7EDB = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +154,7 @@
 				6F708F47222A91B0008C7EDB /* BuyaTests */,
 				6F708F3B222A91B0008C7EDB /* Products */,
 				2113C4C3172867F56D9BEDD2 /* Pods */,
-				9A1FE5292E78CEB44D5E6F5F /* Frameworks */,
+				FFC7BB005B39E4C373A59517 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +174,7 @@
 				6F40A388222D9FD000952D84 /* Extensions */,
 				6F708F68222BDC39008C7EDB /* Plugins */,
 				6F708F5C222AA6CA008C7EDB /* Network Layer */,
+				6F40A3E122318BA600952D84 /* RequestBuilder */,
 				6F708F67222BC9C1008C7EDB /* Provider */,
 				6F708F3D222A91B0008C7EDB /* Buya.h */,
 				6F708F3E222A91B0008C7EDB /* Info.plist */,
@@ -160,7 +185,7 @@
 		6F708F47222A91B0008C7EDB /* BuyaTests */ = {
 			isa = PBXGroup;
 			children = (
-				6F708F48222A91B0008C7EDB /* BuyaTests.swift */,
+				6F708F48222A91B0008C7EDB /* RequestBuilderTests.swift */,
 				6F708F4A222A91B0008C7EDB /* Info.plist */,
 			);
 			path = BuyaTests;
@@ -178,10 +203,10 @@
 		6F708F67222BC9C1008C7EDB /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				6F708F5A222AA061008C7EDB /* Provider.swift */,
+				6F40A3E222318BEE00952D84 /* ProviderProtocol.swift */,
 				6F40A382222C6EEA00952D84 /* Provider+Errors.swift */,
-				6F708F65222AFFCB008C7EDB /* Provider+RequestBuilder.swift */,
-				6F708F63222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift */,
+				6F708F5A222AA061008C7EDB /* Provider.swift */,
+				6FECADB0223762BB00B0D272 /* ProviderLocalization.strings */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -197,11 +222,11 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
-		9A1FE5292E78CEB44D5E6F5F /* Frameworks */ = {
+		FFC7BB005B39E4C373A59517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF3AEAFC0EF51FDCAD324AF7 /* Pods_Buya.framework */,
-				3A7F7184DD73E85118A96FCA /* Pods_BuyaTests.framework */,
+				57ED2D2D4B12C7F2FC3433AE /* Pods_Buya.framework */,
+				9F3C3B85A4F371F2CDB99805 /* Pods_BuyaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,7 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F708F4E222A91B0008C7EDB /* Build configuration list for PBXNativeTarget "Buya" */;
 			buildPhases = (
-				276D99F4747AA3F3BC422818 /* [CP] Check Pods Manifest.lock */,
+				DE20A33839B2770DB5964EA7 /* [CP] Check Pods Manifest.lock */,
 				6F708F35222A91B0008C7EDB /* Headers */,
 				6F708F36222A91B0008C7EDB /* Sources */,
 				6F708F37222A91B0008C7EDB /* Frameworks */,
@@ -243,11 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F708F51222A91B0008C7EDB /* Build configuration list for PBXNativeTarget "BuyaTests" */;
 			buildPhases = (
-				F814C35C90AA715780D212C5 /* [CP] Check Pods Manifest.lock */,
+				CB64AA0D83A6F339663EE0BF /* [CP] Check Pods Manifest.lock */,
 				6F708F3F222A91B0008C7EDB /* Sources */,
 				6F708F40222A91B0008C7EDB /* Frameworks */,
 				6F708F41222A91B0008C7EDB /* Resources */,
-				C670EB69139E8A144DF6A7B0 /* [CP] Embed Pods Frameworks */,
+				82FE69F3A7B22E0F335DF52B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +309,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = 6F708F30222A91B0008C7EDB;
 			productRefGroup = 6F708F3B222A91B0008C7EDB /* Products */;
@@ -301,6 +327,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FECADAE223762BB00B0D272 /* ProviderLocalization.strings in Resources */,
+				6FECADB722376C5700B0D272 /* RequestBuilderLocalization.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,29 +342,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		276D99F4747AA3F3BC422818 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Buya-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C670EB69139E8A144DF6A7B0 /* [CP] Embed Pods Frameworks */ = {
+		82FE69F3A7B22E0F335DF52B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,6 +354,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -356,13 +364,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BuyaTests/Pods-BuyaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F814C35C90AA715780D212C5 /* [CP] Check Pods Manifest.lock */ = {
+		CB64AA0D83A6F339663EE0BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,6 +394,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DE20A33839B2770DB5964EA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Buya-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -396,17 +428,20 @@
 				6F40A393222E5A3000952D84 /* RequestInfo.swift in Sources */,
 				6F40A3C5222EC16600952D84 /* Single+Data.swift in Sources */,
 				6F708F5B222AA061008C7EDB /* Provider.swift in Sources */,
+				6F40A3E522318D2100952D84 /* RequestBuilderProtocol.swift in Sources */,
 				6F708F97222BF0C5008C7EDB /* AccessTokenAuthorizable.swift in Sources */,
 				6F708F99222BF29B008C7EDB /* RefreshTokenApply.swift in Sources */,
 				6F40A38A222D9FF900952D84 /* Error+Extensions.swift in Sources */,
 				6F40A394222E5A3000952D84 /* AddressManagerProtocol.swift in Sources */,
 				6F708F9B222BF5CB008C7EDB /* AccessRecovery.swift in Sources */,
-				6F708F64222AFD39008C7EDB /* RequestBuilderProtocol+Errors.swift in Sources */,
-				6F708F66222AFFCB008C7EDB /* Provider+RequestBuilder.swift in Sources */,
+				6F708F64222AFD39008C7EDB /* RequestBuilder+Errors.swift in Sources */,
+				6F708F66222AFFCB008C7EDB /* RequestBuilder.swift in Sources */,
 				6F708F5F222AA6CA008C7EDB /* NetworkWorker.swift in Sources */,
 				6F40A383222C6EEA00952D84 /* Provider+Errors.swift in Sources */,
 				6F708F60222AA6CA008C7EDB /* NetworkWorkerProtocol.swift in Sources */,
+				6FECADB4223769CB00B0D272 /* String+Localized.swift in Sources */,
 				6F40A396222E5A3000952D84 /* RequestType.swift in Sources */,
+				6F40A3E322318BEE00952D84 /* ProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F708F49222A91B0008C7EDB /* BuyaTests.swift in Sources */,
+				6F708F49222A91B0008C7EDB /* RequestBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +463,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		6FECADB0223762BB00B0D272 /* ProviderLocalization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FECADAF223762BB00B0D272 /* en */,
+				6FECADB22237638700B0D272 /* ru */,
+			);
+			name = ProviderLocalization.strings;
+			sourceTree = "<group>";
+		};
+		6FECADB922376C5700B0D272 /* RequestBuilderLocalization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FECADB822376C5700B0D272 /* en */,
+				6FECADBA22376C5900B0D272 /* ru */,
+			);
+			name = RequestBuilderLocalization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6F708F4C222A91B0008C7EDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -497,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -553,7 +611,7 @@
 		};
 		6F708F4F222A91B0008C7EDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14CD2B0D4EAF2FE2E7A102EA /* Pods-Buya.debug.xcconfig */;
+			baseConfigurationReference = FF0B25401ABCA8331CB68F58 /* Pods-Buya.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -580,7 +638,7 @@
 		};
 		6F708F50222A91B0008C7EDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E56961C082F4456FA4989921 /* Pods-Buya.release.xcconfig */;
+			baseConfigurationReference = 8CDD9CCCA141974D616A159F /* Pods-Buya.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -606,9 +664,9 @@
 		};
 		6F708F52222A91B0008C7EDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7B85F372C5C634E9142EEFA /* Pods-BuyaTests.debug.xcconfig */;
+			baseConfigurationReference = B7DD4F67F2BECC43D15F5683 /* Pods-BuyaTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BuyaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -625,9 +683,9 @@
 		};
 		6F708F53222A91B0008C7EDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D27EF40A12D1DD74EE4B3B83 /* Pods-BuyaTests.release.xcconfig */;
+			baseConfigurationReference = CB572C4DF6F510E979FCBD57 /* Pods-BuyaTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BuyaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

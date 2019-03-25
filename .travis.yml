@@ -1,13 +1,26 @@
-language: objective-c
+language: 
+  - swift
 
-os:
-  - osx
 osx_image: xcode10.1
 
+branches:
+  only:
+    - master
+    - develop
+
+env:
+  matrix:
+    - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone X'
+
 before_install:
+  - gem install slather --no-ri --no-rdoc
   - gem uninstall cocoapods -a -x
   - gem install cocoapods --no-ri --no-rdoc
   - pod install
 
 script:
-  - xcodebuild -workspace Buya.xcworkspace -scheme BuyaTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=12.1' test | xcpretty
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Buya.xcworkspace -scheme BuyaTests -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES | xcpretty
+
+after_success:
+  - slather
+  - bash <(curl -s https://codecov.io/bash) -f reports/cobertura.xml -X coveragepy -X gcov -X xcode

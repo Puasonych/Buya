@@ -17,7 +17,9 @@ public protocol EndpointType {
     
     var requestInfo: RequestInfo { get }
     
-    var timeout: TimeInterval? { get }
+    var requestCachePolicy: URLRequest.CachePolicy { get }
+    
+    var requestTimeout: TimeInterval { get }
     
     var headers: [String: String]? { get }
     
@@ -27,7 +29,9 @@ public protocol EndpointType {
 public extension EndpointType {
     var reuseNumber: Int { return 1 }
     
-    var timeout: TimeInterval? { return nil }
+    var requestCachePolicy: URLRequest.CachePolicy { return URLRequest.CachePolicy.useProtocolCachePolicy }
+    
+    var requestTimeout: TimeInterval { return 60.0 }
     
     var writingOptions: JSONSerialization.WritingOptions { return [] }
 }

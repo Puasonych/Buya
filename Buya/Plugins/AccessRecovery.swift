@@ -57,7 +57,7 @@ public struct AccessRecoveryPlugin: PluginType {
                             return Single.error(error)
                         })
                         .flatMap({ (_) -> Single<Data> in
-                            return provider.request(endpoint, reuseNumber: index + 1)
+                            return provider.request(endpoint, index: index + 1)
                         })
                 }
                 return result

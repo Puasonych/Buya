@@ -13,7 +13,7 @@ import RxCocoa
 public class NetworkWorker: NetworkWorkerProtocol {
     private let session: URLSession
     
-    required init(session: URLSession = URLSession(configuration: .default)) {
+    public init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
     
