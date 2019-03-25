@@ -19,12 +19,16 @@ public enum RequestBuilderError: Error, LocalizedError {
         switch self {
         case RequestBuilderError.invalidUrl:
             return "Invalid url (%s)".requestBuilderLocalized(arguments: "\(self)")
+            
         case RequestBuilderError.invalidGetRequest:
             return "GET request can not contain Body (%s)".requestBuilderLocalized(arguments: "\(self)")
+            
         case RequestBuilderError.invalidParameters:
             return "Invalid query parameters (%s)".requestBuilderLocalized(arguments: "\(self)")
+            
         case RequestBuilderError.jsonEncodingFailed(let error):
             return "JSON serialization failed with an underlying system error during the encoding process; Error: %s (%s)".requestBuilderLocalized(arguments: error.localizedDescription, "\(self)")
+            
         case RequestBuilderError.invalidEndpoint:
             return "Invalid endpoint (%s)".requestBuilderLocalized(arguments: "\(self)")
         }

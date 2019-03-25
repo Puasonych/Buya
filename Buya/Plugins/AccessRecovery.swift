@@ -48,7 +48,7 @@ public struct AccessRecoveryPlugin: PluginType {
                     return self.accessRecoveryClosure()
                         .retryWhen({ (error) -> Observable<Void> in
                             return error.enumerated().flatMap({ (index, error) -> Observable<Void> in
-                                if error.isBadRequest, index < retriesNumber { return Observable.error(error) }
+                                if error.isBadRequest || index < retriesNumber { return Observable.error(error) }
                                 return Observable.just(())
                             })
                         })

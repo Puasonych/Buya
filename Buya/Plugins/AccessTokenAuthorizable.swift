@@ -34,7 +34,7 @@ public enum AuthorizationType {
         case .none: return nil
         case .basic: return "Basic"
         case .bearer: return "Bearer"
-        case .custom(let customValue): return customValue
+        case let .custom(customValue): return customValue
         }
     }
 }
@@ -73,7 +73,6 @@ public struct AccessTokenPlugin: PluginType {
                 let authValue = value + " " + token
                 request.addValue(authValue, forHTTPHeaderField: "Authorization")
             }
-            break
         case .none:
             break
         }
