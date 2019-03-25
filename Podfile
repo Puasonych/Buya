@@ -6,16 +6,18 @@ target 'Buya' do
   use_frameworks!
 
   # Pods for Buya
-  pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
-  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+  pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
   
   target 'BuyaTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
-    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
-    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.1'
+    pod 'RxAtomic', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+    pod 'RxBlocking', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
+    pod 'RxTest', :git => 'https://github.com/ReactiveX/RxSwift.git', :tag => '4.4.2'
   end
   
 end

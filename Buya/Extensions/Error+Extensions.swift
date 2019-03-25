@@ -11,28 +11,22 @@ import RxCocoa
 
 public extension Error {
     var isUnauthorized: Bool {
-        if let error = self as? RxCocoa.RxCocoaURLError {
-            switch error {
-            case .httpRequestFailed(response: let response, data: _):
-                return response.statusCode == 401
-            default:
-                return false
-            }
-        }
-        
-        return false
+        return RxCocoaURLError.isHttpRequestFailed(error: self, at: 401)
     }
     
     var isBadRequest: Bool {
-        if let error = self as? RxCocoa.RxCocoaURLError {
-            switch error {
-            case .httpRequestFailed(response: let response, data: _):
-                return response.statusCode == 400
-            default:
-                return false
-            }
-        }
-        
-        return false
+        return RxCocoaURLError.isHttpRequestFailed(error: self, at: 400)
+    }
+    
+    var isInternalServerError: Bool {
+        return RxCocoaURLError.isHttpRequestFailed(error: self, at: 500)
+    }
+    
+    var isClientError: Bool {
+        return RxCocoaURLError.isHttpRequestFailed(error: self, in: (400..<500))
+    }
+    
+    var isServerError: Bool {
+        return RxCocoaURLError.isHttpRequestFailed(error: self, in: (500..<600))
     }
 }

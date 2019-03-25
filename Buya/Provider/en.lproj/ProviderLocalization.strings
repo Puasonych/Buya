@@ -1,0 +1,13 @@
+/* 
+  ProviderLocalization.strings
+  Buya
+
+  Created by Eric Basargin on 12/03/2019.
+  Copyright © 2019 Three-man army. All rights reserved.
+*/
+
+// MARK: - Provider
+"endpoint.reuseNumber cannot be less than 1" = "endpoint.reuseNumber cannot be less than 1";
+
+// MARK: - Provider+Errors
+"The request %s was repeated more than %d (%s)" = "The request %s was repeated more than %d (%s)";
