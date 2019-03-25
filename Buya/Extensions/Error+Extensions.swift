@@ -10,30 +10,6 @@
 import Foundation
 import RxCocoa
 
-public extension RxCocoaURLError {
-    static func isHttpRequestFailed(error: Error, at errorCode: Int) -> Bool {
-        guard let error = error as? RxCocoaURLError else { return false }
-        
-        switch error {
-        case let .httpRequestFailed(response: response, data: _):
-            return response.statusCode == errorCode
-        default:
-            return false
-        }
-    }
-    
-    static func isHttpRequestFailed(error: Error, in errorCodes: Range<Int>) -> Bool {
-        guard let error = error as? RxCocoaURLError else { return false }
-        
-        switch error {
-        case let .httpRequestFailed(response: response, data: _):
-            return errorCodes.contains(response.statusCode)
-        default:
-            return false
-        }
-    }
-}
-
 public extension Error {
     var isUnauthorized: Bool {
         return RxCocoaURLError.isHttpRequestFailed(error: self, at: 401)
