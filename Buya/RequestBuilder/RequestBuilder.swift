@@ -9,10 +9,10 @@
 import Foundation
 import RxSwift
 
-public class RequestBuilder: RequestBuilderProtocol {
-    private let addressManager: AddressManagerProtocol
+public class RequestBuilder<AddressManager: AddressManagerProtocol>: RequestBuilderProtocol {
+    private let addressManager: AddressManager
     
-    public init(addressManager: AddressManagerProtocol) {
+    public init(addressManager: AddressManager) {
         self.addressManager = addressManager
     }
     

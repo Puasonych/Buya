@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = 'Buya'
-  spec.version            = '1.0.0'
+  spec.version            = '1.0.1'
   spec.summary            = 'Network abstraction framework'
   spec.homepage           = 'https://github.com/Puasonych/Buya'
   spec.license            = { :type => 'MIT', :file => 'LICENSE' }

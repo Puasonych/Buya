@@ -35,8 +35,8 @@
 		6FECADB722376C5700B0D272 /* RequestBuilderLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FECADB922376C5700B0D272 /* RequestBuilderLocalization.strings */; };
 		AB09D40222490DEE00984FF6 /* RefreshTokenApplyPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09D40122490DEE00984FF6 /* RefreshTokenApplyPluginTests.swift */; };
 		AB09D4042249128500984FF6 /* AccessRecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09D4032249128500984FF6 /* AccessRecoveryTests.swift */; };
-        AB42211E2248E9CC00FBF323 /* ExtensionsErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */; };
-        AB4221202248F5F800FBF323 /* RxCocoaURLError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42211F2248F5F800FBF323 /* RxCocoaURLError+Extensions.swift */; };
+		AB42211E2248E9CC00FBF323 /* ExtensionsErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */; };
+		AB4221202248F5F800FBF323 /* RxCocoaURLError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42211F2248F5F800FBF323 /* RxCocoaURLError+Extensions.swift */; };
 		AB4221222248FD4F00FBF323 /* ProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4221212248FD4F00FBF323 /* ProviderTests.swift */; };
 		AB4221242249046100FBF323 /* AccessTokenAyhorizablePluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4221232249046100FBF323 /* AccessTokenAyhorizablePluginTests.swift */; };
 /* End PBXBuildFile section */
@@ -86,8 +86,9 @@
 		9F3C3B85A4F371F2CDB99805 /* Pods_BuyaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuyaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB09D40122490DEE00984FF6 /* RefreshTokenApplyPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenApplyPluginTests.swift; sourceTree = "<group>"; };
 		AB09D4032249128500984FF6 /* AccessRecoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryTests.swift; sourceTree = "<group>"; };
-        AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsErrorsTests.swift; sourceTree = "<group>"; };
-        AB42211F2248F5F800FBF323 /* RxCocoaURLError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoaURLError+Extensions.swift"; sourceTree = "<group>"; };		AB4221212248FD4F00FBF323 /* ProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
+		AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsErrorsTests.swift; sourceTree = "<group>"; };
+		AB42211F2248F5F800FBF323 /* RxCocoaURLError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoaURLError+Extensions.swift"; sourceTree = "<group>"; };
+		AB4221212248FD4F00FBF323 /* ProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
 		AB4221232249046100FBF323 /* AccessTokenAyhorizablePluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAyhorizablePluginTests.swift; sourceTree = "<group>"; };
 		B7DD4F67F2BECC43D15F5683 /* Pods-BuyaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.debug.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB572C4DF6F510E979FCBD57 /* Pods-BuyaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuyaTests.release.xcconfig"; path = "Target Support Files/Pods-BuyaTests/Pods-BuyaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				6F708F48222A91B0008C7EDB /* RequestBuilderTests.swift */,
-                AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */,
+				AB42211D2248E9CC00FBF323 /* ExtensionsErrorsTests.swift */,
 				AB4221212248FD4F00FBF323 /* ProviderTests.swift */,
 				AB4221232249046100FBF323 /* AccessTokenAyhorizablePluginTests.swift */,
 				AB09D40122490DEE00984FF6 /* RefreshTokenApplyPluginTests.swift */,
