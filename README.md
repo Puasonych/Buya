@@ -33,9 +33,6 @@ Using Buya is really simple. You can access an API like this:
 authorizationProvider
     .request(Authorization.getData)
     .map(YourCodableStruct.self)
-    .catchError({ (error) -> Single<YourCodableStruct> in
-        print(error.localizedDescription)
-    })
     .subscribe(
         onSuccess: { (data) in
             /// Doing something with data
