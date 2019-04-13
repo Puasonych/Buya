@@ -15,8 +15,8 @@ Network abstraction framework
 For Buya, use the following entry in your Podfile:
 
 ```rb
-pod 'RxSwift', '~> 4.0'
-pod 'RxCocoa', '~> 4.0'
+pod 'RxSwift', '~> 4.5'
+pod 'RxCocoa', '~> 4.5'
 pod 'Buya', '~> 1.0'
 ```
 
