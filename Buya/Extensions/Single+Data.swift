@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 public extension Single where Element == Data {
-    public func map<T: Decodable>(_ type: T.Type, using decoder: JSONDecoder = JSONDecoder()) -> Single<T> {
+    func map<T: Decodable>(_ type: T.Type, using decoder: JSONDecoder = JSONDecoder()) -> Single<T> {
         return self.asObservable().flatMap({ (data) -> Observable<T> in
             do {
                 return Observable.just(try decoder.decode(type, from: data))
