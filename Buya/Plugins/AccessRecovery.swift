@@ -14,13 +14,6 @@ import RxCocoa
 public protocol AccessRecovery {
     /// Represents the recovery of access to use for requests.
     var accessRecovery: Bool { get }
-    
-    /// Maximum number of retries on failed request
-    var retriesNumber: UInt { get }
-}
-
-public extension AccessRecovery {
-    var retriesNumber: UInt { return 3 }
 }
 
 public struct AccessRecoveryPlugin: PluginType {
@@ -40,18 +33,11 @@ public struct AccessRecoveryPlugin: PluginType {
         guard let recovery = endpoint as? AccessRecovery else { return result }
         
         if !recovery.accessRecovery { return result }
-        let retriesNumber = recovery.retriesNumber
         
         return result
             .catchError { (error) -> Single<Data> in
                 if error.isUnauthorized {
                     return self.accessRecoveryClosure()
-                        .retryWhen({ (error) -> Observable<Void> in
-                            return error.enumerated().flatMap({ (index, error) -> Observable<Void> in
-                                if error.isBadRequest || index < retriesNumber { return Observable.error(error) }
-                                return Observable.just(())
-                            })
-                        })
                         .catchError({ (error) -> Single<Data> in
                             if error.isBadRequest { return result }
                             return Single.error(error)
