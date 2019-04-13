@@ -67,16 +67,19 @@ class RequestBuilderTests: XCTestCase {
     func testRequestCompositeData() {
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
         let endpoint = TestAPI.testRequestCompositeData
-        let query = endpoint.testQuery
-            .map { return "\($0)=\($1)" }
-            .joined(separator: "&")
         
         do {
             let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
-            XCTAssertEqual(urlRequest.url?.absoluteString, "\(TestAddressManager.develop.rawValue)\(endpoint.path)?\(query)")
+            XCTAssertEqual(
+                urlRequest.quaryToDict().merging(endpoint.testQuery) { (valueOne, valueTwo) -> String in
+                    XCTAssertEqual(valueOne, valueTwo)
+                    return valueOne
+                    }.count,
+                endpoint.testQuery.count
+            )
             XCTAssertEqual(urlRequest.httpBody, endpoint.testData)
         } catch {
             XCTFail(error.localizedDescription)
@@ -86,16 +89,19 @@ class RequestBuilderTests: XCTestCase {
     func testRequestQueryParameters() {
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
         let endpoint = TestAPI.testRequestQueryParameters
-        let query = endpoint.testQuery
-            .map { return "\($0)=\($1)" }
-            .joined(separator: "&")
         
         do {
             let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
-            XCTAssertEqual(urlRequest.url?.absoluteString, "\(TestAddressManager.develop.rawValue)\(endpoint.path)?\(query)")
+            XCTAssertEqual(
+                urlRequest.quaryToDict().merging(endpoint.testQuery) { (valueOne, valueTwo) -> String in
+                    XCTAssertEqual(valueOne, valueTwo)
+                    return valueOne
+                    }.count,
+                endpoint.testQuery.count
+            )
             XCTAssertNil(urlRequest.httpBody)
         } catch {
             XCTFail(error.localizedDescription)
@@ -121,16 +127,19 @@ class RequestBuilderTests: XCTestCase {
     func testRequestCompositeParameters() {
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
         let endpoint = TestAPI.testRequestCompositeParameters
-        let query = endpoint.testQuery
-            .map { return "\($0)=\($1)" }
-            .joined(separator: "&")
         
         do {
             let urlRequest = try requestBuilder.makeRequest(endpoint).toBlocking().single()
             
             XCTAssertEqual(urlRequest.allHTTPHeaderFields, endpoint.headers)
             XCTAssertEqual(urlRequest.httpMethod, endpoint.requestType.rawValue)
-            XCTAssertEqual(urlRequest.url?.absoluteString, "\(TestAddressManager.develop.rawValue)\(endpoint.path)?\(query)")
+            XCTAssertEqual(
+                urlRequest.quaryToDict().merging(endpoint.testQuery) { (valueOne, valueTwo) -> String in
+                    XCTAssertEqual(valueOne, valueTwo)
+                    return valueOne
+                    }.count,
+                endpoint.testQuery.count
+            )
             XCTAssertEqual(urlRequest.httpBody, endpoint.testData)
         } catch {
             XCTFail(error.localizedDescription)
@@ -174,5 +183,20 @@ extension RequestBuilderTests.TestAPI: Buya.EndpointType {
             "Content-Type": "application/json",
             "Accept": "application/json"
         ]
+    }
+}
+
+fileprivate extension URLRequest {
+    func quaryToDict() -> [String: String] {
+        guard let quary = self.url?.query else { return [:] }
+        
+        var result: [String: String] = [:]
+        
+        for quaryValue in quary.split(separator: "&") {
+            let pair = quaryValue.split(separator: "=").map({ return String($0) })
+            result[pair[0]] = pair[1]
+        }
+        
+        return result
     }
 }
