@@ -13,9 +13,9 @@ env:
     - TEST_SDK=iphonesimulator12.2 OS=12.2 NAME='iPhone X'
 
 before_install:
-  - gem install slather --no-ri --no-rdoc
+  - gem install slather --no-document
   - gem uninstall cocoapods -a -x
-  - gem install cocoapods --no-ri --no-rdoc
+  - gem install cocoapods --no-document
   - pod install
 
 script:
