@@ -59,9 +59,9 @@ class AccessRecoveryTests: XCTestCase {
     func testRefreshTokenApplyPlugin() {
         let networkWorker = NetworkWorkerMock()
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
-        let plugin = AccessRecoveryPlugin { () -> Single<Data> in
+        let plugin = AccessRecoveryPlugin(accessRecoveryClosure: { () -> Single<Data> in
             return Single.just(Data())
-        }
+        })
         let provider = Buya.Provider<TestAPI>(requestBuilder: requestBuilder, plugins: [plugin], networkWorker: networkWorker)
         let endpoint = TestAPI.fakeRequest
         
@@ -79,9 +79,9 @@ class AccessRecoveryTests: XCTestCase {
     func testRefreshError() {
         let networkWorker = NetworkWorkerMock()
         let requestBuilder = RequestBuilder(addressManager: TestAddressManager.develop)
-        let plugin = AccessRecoveryPlugin { () -> Single<Data> in
+        let plugin = AccessRecoveryPlugin(accessRecoveryClosure: { () -> Single<Data> in
             return Single.error(self.testError(statusCode: 401))
-        }
+        })
         let provider = Buya.Provider<TestAPI>(requestBuilder: requestBuilder, plugins: [plugin], networkWorker: networkWorker)
         
         do {
