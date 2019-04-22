@@ -1,5 +1,5 @@
 //
-//  Single+Data.swift
+//  Single+Extensions.swift
 //  Buya
 //
 //  Created by Eric Basargin on 05/03/2019.
