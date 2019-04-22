@@ -1,4 +1,4 @@
-# Buya [![Build Status](https://travis-ci.com/three-man-army/Buya.svg?branch=master)](https://travis-ci.com/three-man-army/Buya) [![Version](https://img.shields.io/cocoapods/v/Buya.svg?style=flat)](https://cocoapods.org/pods/Buya) [![codebeat badge](https://codebeat.co/badges/1282a7a0-1d96-431d-a6e3-29127688571c)](https://codebeat.co/projects/github-com-puasonych-buya-master) [![codecov](https://codecov.io/gh/Puasonych/Buya/branch/master/graph/badge.svg)](https://codecov.io/gh/Puasonych/Buya) 
+# Buya [![Build Status](https://travis-ci.com/ephedra-software/Buya.svg?branch=master)](https://travis-ci.com/ephedra-software/Buya) [![Version](https://img.shields.io/cocoapods/v/Buya.svg?style=flat)](https://cocoapods.org/pods/Buya) [![codebeat badge](https://codebeat.co/badges/1282a7a0-1d96-431d-a6e3-29127688571c)](https://codebeat.co/projects/github-com-puasonych-buya-master) [![codecov](https://codecov.io/gh/Puasonych/Buya/branch/master/graph/badge.svg)](https://codecov.io/gh/Puasonych/Buya) 
 
 Network abstraction framework
 
@@ -110,4 +110,4 @@ extension Authorization: EndpointType, Buya.RefreshTokenApply {
 
 ## License
 
-RStorage is released under an MIT license. See [LICENSE](https://github.com/Puasonych/Buya/blob/master/LICENSE) for more information.
+RStorage is released under an MIT license. See [LICENSE](https://github.com/ephedra-software/Buya/blob/master/LICENSE) for more information.
