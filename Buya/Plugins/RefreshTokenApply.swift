@@ -9,10 +9,23 @@
 import Foundation
 import RxSwift
 
+/// This parameter defines the location of refresh token
+public enum RefreshTokenLocation {
+    case inQuery
+    case inBody
+}
+
 /// A protocol for controlling the behavior of `RefreshTokenPlugin`.
 public protocol RefreshTokenApply {
     /// Add refresh token to request
     var refreshTokenApply: Bool { get }
+    
+    /// This parameter defines the location of refresh token (body or query)
+    var refreshTokenLocation: RefreshTokenLocation { get }
+}
+
+public extension RefreshTokenApply {
+    var refreshTokenLocation: RefreshTokenLocation { return RefreshTokenLocation.inQuery }
 }
 
 public struct RefreshTokenPlugin: PluginType {
@@ -32,9 +45,13 @@ public struct RefreshTokenPlugin: PluginType {
         guard let refresh = endpoint as? RefreshTokenApply else { return request }
         
         let recoveryAccess = refresh.refreshTokenApply
+        let refreshTokenLocation = refresh.refreshTokenLocation
         var request = request
         
-        if recoveryAccess, let refreshToken = self.refreshTokenClosure() {
+        guard recoveryAccess, let refreshToken = self.refreshTokenClosure() else { return request }
+        
+        switch refreshTokenLocation {
+        case RefreshTokenLocation.inQuery:
             guard let urlString = request.url?.absoluteString else { return request }
             guard var components = URLComponents(string: urlString) else { return request }
             
@@ -44,6 +61,16 @@ public struct RefreshTokenPlugin: PluginType {
             
             guard let url = components.url else { return request }
             request.url = url
+            
+        case RefreshTokenLocation.inBody:
+            let parameters: [String: String] = ["refreshToken": refreshToken]
+            
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: endpoint.writingOptions)
+                request.httpBody = data
+            } catch {
+                return request
+            }
         }
         
         return request
