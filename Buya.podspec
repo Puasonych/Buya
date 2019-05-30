@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = 'Buya'
-  spec.version            = '1.0.4'
+  spec.version            = '1.0.5'
   spec.summary            = 'Network abstraction framework'
   spec.homepage           = 'https://github.com/ephedra-software/Buya'
   spec.license            = { :type => 'MIT', :file => 'LICENSE' }

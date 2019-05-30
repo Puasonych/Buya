@@ -42,7 +42,9 @@ public class RequestBuilder<AddressManager: AddressManagerProtocol>: RequestBuil
         }
     }
     
-    private func makeUrlWithQuery(components: URLComponents, from parameters: [String: String]) -> URL? {
+    private func makeUrlWithQuery(components: URLComponents,
+                                  from parameters: [String: String],
+                                  percentEncodedQueryClosure: EndpointType.PercentEncodedQueryClosure?) -> URL? {
         var components = components
         var queryItems: [URLQueryItem] = []
         
@@ -51,6 +53,10 @@ public class RequestBuilder<AddressManager: AddressManagerProtocol>: RequestBuil
         }
         
         components.queryItems = queryItems
+        
+        if let percentEncodedQueryClosure = percentEncodedQueryClosure {
+            components.percentEncodedQuery = percentEncodedQueryClosure(components.percentEncodedQuery)
+        }
         
         return components.url
     }
@@ -112,7 +118,9 @@ extension RequestBuilder: RequestBuilderFunctionality {
             return Single.error(RequestBuilderError.invalidUrl)
         }
         
-        if let url = self.makeUrlWithQuery(components: components, from: parameters) {
+        if let url = self.makeUrlWithQuery(components: components,
+                                           from: parameters,
+                                           percentEncodedQueryClosure: endpoint.percentEncodedQuery) {
             var request: URLRequest = URLRequest(url: url, timeoutInterval: endpoint.requestTimeout)
             
             if let headers: [String: String] = endpoint.headers {
@@ -142,7 +150,9 @@ extension RequestBuilder: RequestBuilderFunctionality {
             return Single.error(RequestBuilderError.invalidUrl)
         }
 
-        if let url = self.makeUrlWithQuery(components: components, from: parameters) {
+        if let url = self.makeUrlWithQuery(components: components,
+                                           from: parameters,
+                                           percentEncodedQueryClosure: endpoint.percentEncodedQuery) {
             var request: URLRequest = URLRequest(url: url, timeoutInterval: endpoint.requestTimeout)
 
             if let headers: [String: String] = endpoint.headers {
@@ -199,7 +209,9 @@ extension RequestBuilder: RequestBuilderFunctionality {
             return Single.error(RequestBuilderError.invalidUrl)
         }
         
-        if let url = self.makeUrlWithQuery(components: components, from: urlParameters) {
+        if let url = self.makeUrlWithQuery(components: components,
+                                           from: urlParameters,
+                                           percentEncodedQueryClosure: endpoint.percentEncodedQuery) {
             var request: URLRequest = URLRequest(url: url, timeoutInterval: endpoint.requestTimeout)
             
             do {
